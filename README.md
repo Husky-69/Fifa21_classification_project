@@ -19,8 +19,41 @@ The key objectives to be achieved by this study are as follows:
 3. **Give the Club a Competitive Edge**: Use data to identify undervalued players before bigger clubs notice them, allowing the club to sign talent at a lower cost and build a stronger team.
 
 ### Key columns used:
+↓OVA (Overall Rating): Current skill level (0–100), a key predictor of elite potential.
 
-↓OVA, Value, Wage, Attacking, Skill, Movement, Power, Mentality, Defending, W/F, SM, A/W, D/W, IR, Height, Weight, foot drive predictions. POT creates the target.
+POT (Potential Rating): Maximum future rating (0–100), used to create High_Potential.
+
+Value: Market value in euros (e.g., €5M), reflecting market demand.
+
+Wage: Weekly wage in euros (e.g., €10K), indicating current recognition.
+
+Attacking: Score of attacking skills (e.g., Crossing, Finishing).
+
+Skill: Score of technical skills (e.g., Dribbling, Ball Control).
+
+Movement: Score of speed and agility (e.g., Sprint Speed, Acceleration).
+
+Power: Score of physical attributes (e.g., Strength, Stamina).
+
+Mentality: Score of mental attributes (e.g., Vision, Composure).
+
+Defending: Score of defensive skills (e.g., Tackling, Marking).
+
+W/F (Weak Foot): Weaker foot ability (1–5), indicating versatility.
+
+SM (Skill Moves): Dribbling tricks ability (1–5), reflecting flair.
+
+A/W (Attacking Work Rate): Effort in attack (Low, Medium, High).
+
+D/W (Defensive Work Rate): Effort in defense (Low, Medium, High).
+
+IR (International Reputation): Global fame (1–5).
+
+Height: Height in inches, affecting physical presence.
+
+Weight: Weight in pounds, influencing strength.
+
+foot: Preferred foot (Left = 0, Right = 1).
 
 These columns were cleaned (e.g., converting Value to numeric) and used as features to predict High_Potential.
 
@@ -41,15 +74,21 @@ Evaluation: Focused on Recall (~85% for Tuned Logistic Regression) to catch high
 
 Player Ranking: Generated with predicted probabilities to prioritize high-potential players.
 
+Evaluation: Used Recall as the primary metric to minimize missing high-potential players, supported by ROC-AUC and classification reports. Visualized performance with ROC curves![ROC Curves for Model Performance](roc_curves.png).
+
+Player Ranking: Generated player_ranking.csv with predicted probabilities to prioritize prospects.
+
 ### Key Outcomes:
 
-The Tuned Logistic Regression identifies ~85% of high-potential players, with top prospects like Kylian Mbappé ranked highly (probability ~0.95).
+All models achieved high performance, with ROC curves indicating strong classification ability.
 
-Value, Dribbling, and ↓OVA are the strongest predictors, guiding scouting criteria.
+The model shortlists high-potential players, enabling targeted scouting.
+
+Outputs include a cleaned dataset (fifa21_cleaned_data.csv) for Tableau visualization and a ranked player list (player_ranking.csv).
 
 ### Recommendations for the 2025–2026 Season
 
-**1.** Target Top Prospects: Scout the top 20 players from player_ranking.csv with probabilities ≥ 0.8. Arrange trials or review footage in January 2025.
+**1.** Target Top Prospects: Scout the top 20 players from the analyzed data with probabilities ≥ 0.8. Arrange trials or review footage in July 2025.
 
 **2.** Focus on Skills: Prioritize players with Dribbling ≥ 75 and strong Skill scores for attacking and midfield roles.
 
@@ -57,7 +96,7 @@ Value, Dribbling, and ↓OVA are the strongest predictors, guiding scouting crit
 
 **4.** Streamline Scouting: Use video tools (e.g., Wyscout) to evaluate the top 50 players, then scout the top 10–15 in person.
 
-**5.** Scout Lower Leagues: Visit leagues like the Eredivisie in early 2025 to find players with low IR and high Skill Moves (SM ≥ 4).
+**5.** Scout Lower Leagues: Visit leagues like the Eredivisie to find players with low IR and high Skill Moves (SM ≥ 4).
 
 **6.** Pilot the Model: Sign 2–3 top-ranked players in July 2025, track their performance, and update the model with new data in January 2026.
 
