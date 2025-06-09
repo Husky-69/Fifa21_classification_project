@@ -6,7 +6,7 @@ Smart scouting is pretty important, especially if it's outshining a big budget .
 
 That’s where my project comes in. I’ve harnessed the power of data science to act like your ultimate scouting assistant. Using a massive dataset from the FIFA 21 game, packed with details on over 18,000 players—think skills, market value, and more—I’ve built a tool to predict which young players, aged 23 or under, have what it takes to reach the elite level, like a Lionel Messi or Kylian Mbappé. The model doesn’t just guess; it learns patterns from the data to spot players with that special potential, even if they’re flying under the radar. 
 
-Source: fifa21_raw_data.csv from the FIFA 21 video game in Kaggle, containing player attributes for ~18,000 players.
+**.** Source: fifa21_raw_data.csv from the FIFA 21 video game in Kaggle, containing player attributes for ~18,000 players.
 
 ##  OBJECTIVES
 
@@ -19,60 +19,60 @@ The key objectives to be achieved by this study are as follows:
 3. **Give the Club a Competitive Edge**: Use data to identify undervalued players before bigger clubs notice them, allowing the club to sign talent at a lower cost and build a stronger team.
 
 ### Key columns used:
-↓OVA (Overall Rating): Current skill level (0–100), a key predictor of elite potential.
+**↓OVA (Overall Rating)**: Current skill level (0–100), a key predictor of elite potential.
 
-POT (Potential Rating): Maximum future rating (0–100), used to create High_Potential.
+**POT (Potential Rating)**: Maximum future rating (0–100), used to create High_Potential.
 
-Value: Market value in euros (e.g., €5M), reflecting market demand.
+**Value**: Market value in euros (e.g., €5M), reflecting market demand.
 
-Wage: Weekly wage in euros (e.g., €10K), indicating current recognition.
+**Wage**: Weekly wage in euros (e.g., €10K), indicating current recognition.
 
-Attacking: Score of attacking skills (e.g., Crossing, Finishing).
+**Attacking**: Score of attacking skills (e.g., Crossing, Finishing).
 
-Skill: Score of technical skills (e.g., Dribbling, Ball Control).
+**Skill**: Score of technical skills (e.g., Dribbling, Ball Control).
 
-Movement: Score of speed and agility (e.g., Sprint Speed, Acceleration).
+**Movement**: Score of speed and agility (e.g., Sprint Speed, Acceleration).
 
-Power: Score of physical attributes (e.g., Strength, Stamina).
+**Power**: Score of physical attributes (e.g., Strength, Stamina).
 
-Mentality: Score of mental attributes (e.g., Vision, Composure).
+**Mentality**: Score of mental attributes (e.g., Vision, Composure).
 
-Defending: Score of defensive skills (e.g., Tackling, Marking).
+**Defending**: Score of defensive skills (e.g., Tackling, Marking).
 
-W/F (Weak Foot): Weaker foot ability (1–5), indicating versatility.
+**W/F (Weak Foot)**: Weaker foot ability (1–5), indicating versatility.
 
-SM (Skill Moves): Dribbling tricks ability (1–5), reflecting flair.
+**SM (Skill Moves)**: Dribbling tricks ability (1–5), reflecting flair.
 
-A/W (Attacking Work Rate): Effort in attack (Low, Medium, High).
+**A/W (Attacking Work Rate)**: Effort in attack (Low, Medium, High).
 
-D/W (Defensive Work Rate): Effort in defense (Low, Medium, High).
+**D/W (Defensive Work Rate)**: Effort in defense (Low, Medium, High).
 
-IR (International Reputation): Global fame (1–5).
+**IR (International Reputation)**: Global fame (1–5).
 
-Height: Height in inches, affecting physical presence.
+**Height**: Height in inches, affecting physical presence.
 
-Weight: Weight in pounds, influencing strength.
+**Weight**: Weight in pounds, influencing strength.
 
-foot: Preferred foot (Left = 0, Right = 1).
+**foot**: Preferred foot (Left = 0, Right = 1).
 
 These columns were cleaned (e.g., converting Value to numeric) and used as features to predict High_Potential.
 
 ### Methodology:
-Data Preparation: Cleaned the FIFA 21 dataset, filtered for players aged ≤ 23, and created the High_Potential target.
+**.** Data Preparation: Cleaned the FIFA 21 dataset, filtered for players aged ≤ 23, and created the High_Potential target.
 
-Exploratory Data Analysis (EDA): Analyzed distributions (e.g., Age, Value) and correlations (e.g., ↓OVA with Value).
+**.** Exploratory Data Analysis (EDA): Analyzed distributions (e.g., Age, Value) and correlations (e.g., ↓OVA with Value).
 
-Modeling: Built three models:
+**.** Modeling: Built three models:
 
-**.** Baseline Logistic Regression (simple, interpretable).
+**(a)** Baseline Logistic Regression (simple, interpretable).
 
-**.** Tuned Logistic Regression (optimized with class weights, expanded hyperparameters: C, solver, penalty).
+**(b)** Tuned Logistic Regression (optimized with class weights, expanded hyperparameters: C, solver, penalty).
 
-**.** Tuned Decision Tree (tuned max_depth, min_samples_split).
+**(c)** Tuned Decision Tree (tuned max_depth, min_samples_split).
 
-Evaluation: Focused on Recall (~85% for Tuned Logistic Regression) to catch high-potential players, with ROC-AUC (~0.91) for class separation.
+**.** Evaluation: Focused on Recall (~85% for Tuned Logistic Regression) to catch high-potential players, with ROC-AUC (~0.91) for class separation.
 
-Player Ranking: Generated with predicted probabilities to prioritize high-potential players.
+**.** Player Ranking: Generated with predicted probabilities to prioritize high-potential players.
 
 Evaluation: Used Recall as the primary metric to minimize missing high-potential players, supported by ROC-AUC and classification reports. Visualized performance with ROC curves![ROC Curves for Model Performance](roc_curves.png).
 
@@ -80,11 +80,11 @@ Player Ranking: Generated player_ranking.csv with predicted probabilities to pri
 
 ### Key Outcomes:
 
-All models achieved high performance, with ROC curves indicating strong classification ability.
+**-** All models achieved high performance, with ROC curves indicating strong classification ability.
 
-The model shortlists high-potential players, enabling targeted scouting.
+**-** The model shortlists high-potential players, enabling targeted scouting.
 
-Outputs include a cleaned dataset (fifa21_cleaned_data.csv) for Tableau visualization and a ranked player list (player_ranking.csv).
+**-** Outputs include a cleaned dataset (fifa21_cleaned_data.csv) for Tableau visualization and a ranked player list (player_ranking.csv).
 
 ### Recommendations for the 2025–2026 Season
 
