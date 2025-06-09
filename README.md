@@ -1,4 +1,58 @@
 # Unlocking Future Stars: Predicting High-Potential Football Players with Machine Learning
+##   Requirements
+
+To reproduce the analysis in this project, you will need the following software and Python libraries:
+
+**Software:**
+
+* **Python 3.x:** It is recommended to use Python 3.6 or later.
+
+**Python Libraries:**
+
+You can install these libraries using pip.
+
+* **pandas:** For data manipulation and analysis.
+* **matplotlib:** For creating visualizations.
+* **seaborn:** For enhanced data visualizations (if used).
+* **numpy:** For numerical computations (if used).
+* **sklearn:** For machine learning algorithms
+
+**Installation Instructions:**
+
+1.  Ensure you have Python 3.x installed on your system. You can check your Python version by opening a terminal and running:
+
+    ```bash
+    python --version
+    ```
+
+2.  You can install the required Python libraries using pip. It's highly recommended to create a virtual environment to manage your project dependencies.
+
+    * **Create a virtual environment (optional but recommended):**
+      ```bash
+        python -m venv .venv  # Create a virtual environment named '.venv'
+        source .venv/bin/activate  # On Linux/macOS
+        .venv\Scripts\activate  # On Windows
+        ```
+
+    * **Install the libraries:**
+
+        ```bash
+        pip install pandas matplotlib seaborn numpy  # Install all at once
+        #OR
+        pip install pandas
+        pip install numpy
+        pip install matplotlib
+        pip install seaborn
+        pip install scikit-learn
+        pip install scipy
+        ```
+
+This repository is organized to facilitate easy access to project files and resources. Below is a guide to help you navigate its contents:
+
+* **Dataset/:** This directory contains the data used in the analysis. 
+* **Notebooks/:** This directory contains the Jupyter Notebooks used for data exploration, preparation, analysis, and visualization.
+* **.gitignore:** This file specifies any files or directories that should not be tracked by Git.
+* **README.md:** This file provides a comprehensive overview of the Fifa21_classification project.
 
 ## PROJECT OVERVIEW
 
