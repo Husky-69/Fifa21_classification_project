@@ -18,7 +18,9 @@ The key objectives to be achieved by this study are as follows:
 
 ### Key columns used:
 
-↓OVA, Value, Wage, Attacking, Skill, Movement, Power, Mentality, Defending, W/F, SM, A/W, D/W, IR, Height, Weight, foot drive predictions, as seen in the lr_feature_importance.png (from the Tuned code). POT creates the target.
+↓OVA, Value, Wage, Attacking, Skill, Movement, Power, Mentality, Defending, W/F, SM, A/W, D/W, IR, Height, Weight, foot drive predictions. POT creates the target.
+
+
 
 
 
